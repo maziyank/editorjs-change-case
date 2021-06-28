@@ -1,0 +1,36 @@
+.change-case-action {
+    z-index: 90;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;    
+}
+
+.change-case-tool {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.change-case-tool:hover {
+    background: #eff2f5;
+}
+
+.change-case-toolbar__label {
+    color: #707684;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .33px;
+    padding: 10px 10px 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
