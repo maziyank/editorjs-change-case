@@ -3,8 +3,8 @@
 * @author Bakhtiar Amaludin <github.com/maziyank>
 */ 
 
-import './change-case.css';
 import { upperCase, lowerCase, titleCase, sentenceCase, toggleCase } from "./change-case-util";
+import './change-case.css';
 
 export default class ChangeCase {
 
@@ -63,8 +63,7 @@ export default class ChangeCase {
         return this.button;
     }
 
-    checkState(selection) {
-        console.log(selection);
+    checkState(selection) {        
         const text = selection.anchorNode;
         if (!text) return;
     }
