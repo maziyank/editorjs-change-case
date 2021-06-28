@@ -4,6 +4,8 @@
 
 Change Case Tool for the [Editor.js](https://editorjs.io).
 
+![](assets/example.gif)
+
 ## Installation
 
 ### Install via NPM
