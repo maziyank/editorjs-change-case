@@ -12,6 +12,14 @@ export const upperCase = (text) => {
     return text.toUpperCase();
 }
 
+export const localeLowerCase = (text, locale) => {
+    return text.toLocaleLowerCase(locale);
+}
+
+export const localeUpperCase = (text, locale) => {
+    return text.toLocaleUpperCase(locale);
+}
+
 export const sentenceCase = (text) => {
     return text.charAt(0).toUpperCase() + text.slice(1, text.length).toLowerCase();
 }

@@ -32,11 +32,15 @@ import ChangeCase from 'editorjs-change-case';
 ## Usage
 
 Add a new Tool to the `tools` property of the Editor.js initial config.
+The locale parameter used to convert according to locale-specific case mappings.
 
 ```javascript
 var editor = EditorJS({  
   tools: {
-    changeCase: ChangeCase
+    changeCase: {
+      class: ChangeCase,
+      locale: 'tr' // or ['tr', 'TR', 'tr-TR']
+    }
   }
 });
 ```

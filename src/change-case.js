@@ -1,9 +1,9 @@
 /**
 * @file Change Case Tool for the Editor.js - Allows to change selected text case in the block.
 * @author Bakhtiar Amaludin <github.com/maziyank>
-*/ 
+*/
 
-import { upperCase, lowerCase, titleCase, sentenceCase, toggleCase } from "./change-case-util";
+import { upperCase, lowerCase, titleCase, sentenceCase, toggleCase, localeLowerCase, localeUpperCase } from "./change-case-util";
 import './change-case.css';
 
 export default class ChangeCase {
@@ -16,13 +16,14 @@ export default class ChangeCase {
         return this._state;
     }
 
-    constructor({ api }) {
+    constructor({ config, api }) {
         this.api = api;
         this.button = null;
         this.optionButtons = [];
         this._state = true;
         this.selectedText = null;
         this.range = null;
+        this._settings = config;
 
         this.CSS = {
             actions: 'change-case-action',
@@ -36,6 +37,8 @@ export default class ChangeCase {
             'titleCase': 'Title Case',
             'lowerCase': 'lower case',
             'upperCase': 'UPPER CASE',
+            'localeLowerCase': 'localé lower casé',
+            'localeUpperCase': 'LöCALE UPPER CASE',                  
             'sentenceCase': 'Sentence case',
             'toggleCase': 'tOOGLE cASE'
         }
@@ -63,11 +66,11 @@ export default class ChangeCase {
         return this.button;
     }
 
-    checkState(selection) {        
+    checkState(selection) {
         const text = selection.anchorNode;
         if (!text) return;
     }
-    
+
     convertCase(range, option) {
         if (!range) return
         const clone = range.cloneContents();
@@ -86,6 +89,14 @@ export default class ChangeCase {
 
                 case 'upperCase':
                     node.textContent = upperCase(node.textContent);
+                    break;
+
+                case 'localeLowerCase':
+                    node.textContent = localeLowerCase(node.textContent, this._settings.locale);
+                    break;
+
+                case 'localeUpperCase':
+                    node.textContent = localeUpperCase(node.textContent, this._settings.locale);
                     break;
 
                 case 'sentenceCase':
