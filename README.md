@@ -39,7 +39,10 @@ var editor = EditorJS({
   tools: {
     changeCase: {
       class: ChangeCase,
-      locale: 'tr' // or ['tr', 'TR', 'tr-TR']
+      config: {
+        showLocaleOption: true, // enable locale case options
+        locale: 'tr' // or ['tr', 'TR', 'tr-TR']
+      }
     }
   }
 });

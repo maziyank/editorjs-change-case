@@ -38,7 +38,7 @@ export default class ChangeCase {
             'lowerCase': 'lower case',
             'upperCase': 'UPPER CASE',
             'localeLowerCase': 'localé lower casé',
-            'localeUpperCase': 'LöCALE UPPER CASE',                  
+            'localeUpperCase': 'LöCALE UPPER CASE',
             'sentenceCase': 'Sentence case',
             'toggleCase': 'tOOGLE cASE'
         }
@@ -133,6 +133,11 @@ export default class ChangeCase {
 
         this.actions.appendChild(actionsToolbar);
 
+        if (!this._settings.showLocaleOption) {
+            delete this.caseOptions.localeLowerCase;
+            delete this.caseOptions.localeUpperCase;
+        }        
+        
         this.optionButtons = Object.keys(this.caseOptions).map(option => {
             const btnOption = document.createElement('div');
             btnOption.classList.add(this.CSS.tool);
