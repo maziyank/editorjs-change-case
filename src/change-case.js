@@ -40,7 +40,7 @@ export default class ChangeCase {
             'localeLowerCase': 'localé lower casé',
             'localeUpperCase': 'LöCALE UPPER CASE',
             'sentenceCase': 'Sentence case',
-            'toggleCase': 'tOOGLE cASE'
+            'toggleCase': 'tOGGLE cASE'
         }
     }
 
