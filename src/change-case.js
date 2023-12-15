@@ -148,7 +148,7 @@ export default class ChangeCase {
 
         for (const btnOption of this.optionButtons) {
             this.actions.appendChild(btnOption);
-            this.api.listeners.on(btnOption, 'click', () => {
+            this.api.listeners.on(btnOption, 'mousedown', () => {
                 this.convertCase(this.range, btnOption.dataset.mode)
             });
         }
@@ -159,7 +159,7 @@ export default class ChangeCase {
 
     destroy() {
         for (const btnOption of this.optionButtons) {
-            this.api.listeners.off(btnOption, 'click');
+            this.api.listeners.off(btnOption, 'mousedown');
         }
     }
 }
